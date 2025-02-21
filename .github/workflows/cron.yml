@@ -1,4 +1,4 @@
-name: Run Node.js Script
+name: Run Ruhr Strike Notifier Script
 
 on:
   schedule:
