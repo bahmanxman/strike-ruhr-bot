@@ -2,7 +2,7 @@ name: Run Node.js Script
 
 on:
   schedule:
-    - cron: '*/1 * * * *'  # This runs the script every day at midnight UTC (adjust as needed)
+    - cron: '*/5 * * * *'  # This runs the script every day at midnight UTC (adjust as needed)
   workflow_dispatch:  # This allows you to manually trigger the workflow if needed
 
 jobs:
@@ -20,6 +20,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install  # Install the required dependencies from your package.json
+
+      - name: Log current time (for debugging)
+        run: echo "Current time is $(date)"
 
       - name: Run script
         env:
