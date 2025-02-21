@@ -1,0 +1,21 @@
+{
+  "name": "strike-ruhr-bot",
+  "version": "1.0.0",
+  "description": "A script to scrape ruhrbahn website to check for strikes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmanxman/strike-ruhr-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bahmanxman/strike-ruhr-bot/issues"
+  },
+  "homepage": "https://github.com/bahmanxman/strike-ruhr-bot#readme"
+}
