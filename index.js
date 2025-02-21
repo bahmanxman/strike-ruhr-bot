@@ -6,7 +6,7 @@ const TelegramBot = require('node-telegram-bot-api');
 // Load environment variables
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
-const RUHRBAHN_URL = process.env.RUHRBAHN_URL;
+const RUHRBAHN_URL = 'https://www.ruhrbahn.de/essen/aktuelles/ruhrbahn-aktuell';
 
 const bot = new TelegramBot(TELEGRAM_BOT_TOKEN, { polling: false });
 
