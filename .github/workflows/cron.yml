@@ -2,31 +2,28 @@ name: Run Ruhr Strike Notifier Script
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # This runs the script every day at midnight UTC (adjust as needed)
-  workflow_dispatch:  # This allows you to manually trigger the workflow if needed
+    - cron: '*/1 * * * *'  # Runs every minute (UTC)
+  workflow_dispatch:  # Allows you to manually trigger the workflow
 
 jobs:
   run-script:
-    runs-on: ubuntu-latest  # Specifies the environment to run your script
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2  # Checkout your repository code
+        uses: actions/checkout@v2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2  # Set up Node.js environment
+        uses: actions/setup-node@v2
         with:
-          node-version: '22.14.0'  # Specify the version of Node.js you want to use
+          node-version: '22.14.0'
 
       - name: Install dependencies
-        run: npm install  # Install the required dependencies from your package.json
-
-      - name: Log current time (for debugging)
-        run: echo "Current time is $(date)"
+        run: npm install
 
       - name: Run script
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           RUHRBAHN_URL: ${{ secrets.RUHRBAHN_URL }}
-        run: node index.js  # Run your Node.js script
+        run: node index.js
