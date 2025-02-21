@@ -1,0 +1,25 @@
+name: Run Node.js Script
+
+on:
+  schedule:
+    - cron: '*/1 * * * *'  # This runs the script every day at midnight UTC (adjust as needed)
+  workflow_dispatch:  # This allows you to manually trigger the workflow if needed
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest  # Specifies the environment to run your script
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Checkout your repository code
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2  # Set up Node.js environment
+        with:
+          node-version: '22.14.0'  # Specify the version of Node.js you want to use
+
+      - name: Install dependencies
+        run: npm install  # Install the required dependencies from your package.json
+
+      - name: Run script
+        run: node index.js  # Run your Node.js script

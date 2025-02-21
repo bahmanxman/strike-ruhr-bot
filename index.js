@@ -30,7 +30,7 @@ async function checkForStrikes() {
         if (found) {
           bot.sendMessage(TELEGRAM_CHAT_ID, `🚨 Strike Alert! Ruhrbahn mentions "Streik". Check updates: ${RUHRBAHN_URL}`);
         } else {
-          console.log("No strike found.");
+          bot.sendMessage(TELEGRAM_CHAT_ID, 'No Strike has been reported.');
         }
     } else {
         // If the URL is not healthy, notify about the issue
