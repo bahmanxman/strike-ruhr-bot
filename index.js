@@ -28,17 +28,17 @@ async function checkForStrikes() {
         });
     
         if (found) {
-            bot.sendMessage(TELEGRAM_CHAT_ID, `🚨 Strike Alert! Ruhrbahn mentions "Streik". Check updates: ${RUHRBAHN_URL}`);
+            bot.sendMessage(TELEGRAM_CHAT_ID, `🚨 Streikalarm! Ruhrbahn erwähnt „Streik“. Überprüfen Sie Updates: ${RUHRBAHN_URL}`);
         } else {
-            bot.sendMessage(TELEGRAM_CHAT_ID, '🚌 No Strike has been reported.');
+            bot.sendMessage(TELEGRAM_CHAT_ID, '🚌 Kein Streik gemeldet.');
         }
     } else {
         // If the URL is not healthy, notify about the issue
-        bot.sendMessage(process.env.TELEGRAM_CHAT_ID, `❗ The website is unreachable or has an issue. status : ${healthResponse.status} ❗`);
+        bot.sendMessage(process.env.TELEGRAM_CHAT_ID, `❗ Die Website ist nicht erreichbar oder hat ein Problem. Status: ${healthResponse.status} ❗`);
     }
   } catch (error) {
     console.error("Error scraping the website:", error);
-    bot.sendMessage(process.env.TELEGRAM_CHAT_ID, '❗ There was an error connecting to the website. ❗');
+    bot.sendMessage(process.env.TELEGRAM_CHAT_ID, '❗ Beim Verbinden mit der Website ist ein Fehler aufgetreten. ❗');
   }
 }
 

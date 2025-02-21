@@ -2,7 +2,7 @@ name: Run Ruhr Strike Notifier Script
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Run every 5 minutes (UTC)
+    - cron: '0 * * * *'  # Run every hour (UTC)
   workflow_dispatch:  # Allows you to manually trigger the workflow
 
 jobs:
